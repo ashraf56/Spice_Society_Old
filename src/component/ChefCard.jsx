@@ -8,7 +8,10 @@ import { Link } from 'react-router-dom';
 
 
 const ChefCard = ({singlechef}) => {
+
+
     let {id ,likes,chef_picture,chef_name,years_of_experience,number_of_recipes}=singlechef;
+
     return (
         <div>
           
