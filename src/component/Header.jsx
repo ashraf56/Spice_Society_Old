@@ -9,7 +9,7 @@ const Header = () => {
         <div>
             <Navbar collapseOnSelect expand="lg" bg="body" variant="light">
       <Container>
-        <Navbar.Brand href="#home" className='fw-bold text-uppercase'> <span className='fs-3 text-danger'><FaFire /></span> SpiceSociety </Navbar.Brand>
+        <Navbar.Brand href="#home" className='fw-bold text-uppercase'> <span className='fs-3 text-danger'><FaFire /></span> Spice-Society </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
          
