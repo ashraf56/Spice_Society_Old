@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { FaFire } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 const Header = () => {
     return (
         <div>
@@ -13,12 +14,15 @@ const Header = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
          
           <Nav className='ms-auto'>
-          <Nav.Link href="#features">Home</Nav.Link>
-            <Nav.Link >Blog </Nav.Link>
-            <Nav.Link>More deets</Nav.Link>
-            <Nav.Link >
-              Dank memes
-            </Nav.Link>
+   
+  <li className="nav-item">
+    <Link className="nav-link" to='/' >Home</Link>
+  </li>
+  <li className="nav-item">
+  <Link className="nav-link" to='/blog' >blog</Link>  </li>
+  <li className="nav-item">
+  <Link className="nav-link"  >User Profile</Link>  </li>
+          
           </Nav>
         </Navbar.Collapse>
       </Container>
