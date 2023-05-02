@@ -13,8 +13,8 @@ const ChefCard = ({singlechef}) => {
     <div className="card">
       <img src="..." className="card-img-top" />
       <div className="card-body">
-        <h5 className="card-title">Card title</h5>
-        <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <h5 className="card-title">{chef_name}</h5>
+        <p className="card-text">{years_of_experience}</p>
       </div>
     </div>
   </div>
