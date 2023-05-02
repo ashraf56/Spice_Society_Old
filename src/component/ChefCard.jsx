@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row'
 import {  FaRegThumbsUp } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 
 const ChefCard = ({singlechef}) => {
@@ -11,19 +12,22 @@ const ChefCard = ({singlechef}) => {
     return (
         <div>
           
-  <div className="col ">
-    <div className="card rounded-5">
-      <div className="card-body m-2 ">
-      <div className='py-3'>
-        <img src={chef_picture} className="img-fluid w-25 rounded-5" />
-      </div>
+  <div className="col  h-100">
+    <div className="card  rounded-5">
       
+ 
+        <img src={chef_picture} className="img-thumbnail  rounded-5" />
+     
+      <div className="card-body m-2 ">
       
         <h5 className="card-title">{chef_name}</h5>
         <p className=" fs-semibold">Experience:{years_of_experience} years</p>
         <p className=" fs-semibold"><FaRegThumbsUp/>  {likes} </p>
         <p className=" fs-semibold">number of recipes :{number_of_recipes} </p>
-        <button className='btn btn-outline-danger'>View Recipes</button>
+        <Link to={`/chef/${id}`}>
+        <button className='btn btn-outline-danger fw-bold'>View Recipes</button>
+        </Link>
+        
       
       </div>
     </div>

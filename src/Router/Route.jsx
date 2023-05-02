@@ -16,6 +16,10 @@ const router = createBrowserRouter([
     path:'/blog',
     element:<Blog/>
 },
+{
+  path:'/chef/:id',
+  element:<div>This is cte</div>
+}
 
       ]
     },
