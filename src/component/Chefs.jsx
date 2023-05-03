@@ -18,25 +18,26 @@ setTimeout(() => {
         <div className='m-5  my-5'>
           <h1 className='fw-bold py-4 text-center'>Meet Our Talented  <span className='text-danger'>Bangladeshi Chefs</span>
 </h1>
-<div className="row row-cols-1 row-cols-md-2 g-4">
+
 {isLoading ? (
-        <Spinner animation="border" role="status">
-          <span className="sr-only">Loading...</span>
-        </Spinner>
+  <div class="text-center">
+      <div className="spinner-border text-danger " role="status">
+      <span className="visually-hidden">Loading...</span>
+    </div></div>
       ) : 
-      <>
+      <div className="row row-cols-1 row-cols-md-2 g-4">
       {
     chef.map(singlechef=> <ChefCard
     key={singlechef.id}
     singlechef={singlechef}
     
     ></ChefCard>)
-}</>
+}</div>
       
       }
           
 
-          </div>
+          
 
    
 
