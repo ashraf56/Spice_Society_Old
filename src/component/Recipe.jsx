@@ -17,7 +17,7 @@ const Recipe = ({Chef}) => {
            Discover  Chef: <span className='text-danger'> {chef_name}</span>
            </h3>
             <div className='rounded-start-pill'>
- <img src={chef_picture} alt="" className=' rounded-5 ' />
+ <img src={chef_picture} alt="" className=' img-fluid rounded-5 ' />
             </div>
            
 

@@ -1,15 +1,31 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
+import { Authcontext } from './AuthCenter/AuthCenter';
 const Login = () => {
+  let {signIN}=useContext(Authcontext);
+  let[error ,Seterror]=useState('')
 
 let handlelogin = e =>{
     e.preventDefault();
     let form=e.target;
     let email=form.email.value;
     let password=form.password.value;
+ signIN(email,password)
+        .then((userCredential) => {
+          const loguser = userCredential.user;
+        Seterror('');
+        }
+          
+          )
+        .catch((error) => {
+      
+          const errorMessage = error.message;
+          Seterror(errorMessage)
+        });
+
     console.log(email);
 }
 
@@ -35,6 +51,7 @@ let handlelogin = e =>{
   <button type="submit" className="btn btn-dark w-100">Submit</button>
  
   <Link to='/signup' className='text-decoration-none text-dark'> Register now </Link>
+  <p className='py-2 text-danger fw-bold text-uppercase'>{error}</p>
 </form>
     </Card>
 

@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Card } from 'react-bootstrap';
+import { Authcontext } from './AuthCenter/AuthCenter';
 
 const Signup = () => {
 
-
+let {user,createUser}=useContext(Authcontext);
+let[error ,Seterror]=useState('')
     let handleSignup = e =>{
         e.preventDefault();
         let form=e.target;
@@ -11,7 +13,22 @@ const Signup = () => {
         let password=form.password.value;
         let user=form.user.value;
         let url=form.photo.value;
+
+createUser(email,password)
+.then((userCredential) => {
+  const logeduser = userCredential.user;
+  Seterror('')
+  console.log(logeduser);
+})
+.catch((error) => {
+  const errorMessage = error.message;
+  Seterror(errorMessage)
+})
+
+
         console.log(email,password,user,url);
+        e.target.reset();
+
     }
 
     return (
@@ -28,22 +45,23 @@ const Signup = () => {
      
      <div className="mb-3 w-100">
        <label className="form-label">Name</label>
-       <input type="email" className="form-control" name='user' id="exampleInputEmail1" />
+       <input type="text" className="form-control" name='user' id="exampleInputEmail1" />
      </div> 
        <div className="mb-3 w-100">
        <label className="form-label">Email address</label>
-       <input type="email" className="form-control" name='email' id="exampleInputEmail1" />
+       <input type="email" required className="form-control" name='email' id="exampleInputEmail1" />
      </div>
      <div className="mb-3 w-100">
        <label className="form-label">Photo url</label>
-       <input type="email" className="form-control" name='photo' id="exampleInputEmail1" />
+       <input type="text" className="form-control" name='photo' id="exampleInputEmail1" />
      </div>
      <div className="mb-3 w-100">
        <label className="form-label">Password</label>
-       <input type="password" className="form-control" name='password' id="exampleInputPassword1"/>
+       <input type="password" required className="form-control" name='password' id="exampleInputPassword1"/>
      </div>
      
      <button type="submit" className="btn btn-dark w-100">Submit</button>
+     <p className='py-2 text-danger fw-bold text-uppercase'>{error}</p>
    </form>
        </Card>
    
