@@ -21,7 +21,7 @@ const Header = () => {
   <li className="nav-item">
   <Link className="nav-link" to='/blog' >blog</Link>  </li>
   <li className="nav-item">
-  <Link className="nav-link"  >User Profile</Link>  </li>
+  <Link className="nav-link" to='/login' >Login</Link>  </li>
           
           </Nav>
         </Navbar.Collapse>

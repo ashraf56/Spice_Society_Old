@@ -8,7 +8,7 @@ const Allrecepie = ({recipe}) => {
     const [isFavorite, setIsFavorite] = useState(false);
 
 let show=()=>{
-    toast(" This Recipe added to your favorite list",{
+    toast(" This recipe has been added to your favourites",{
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -30,10 +30,10 @@ let show=()=>{
     
       <div className="card-body m-2 ">
       
-        <h5 className="card-title text-danger fw-bold text-uppercase">{name}</h5>
+        <h3 className="card-title text-danger fw-bold text-uppercase">{name}</h3>
         <p>Ratings  <span className='text-warning'> <FaStar/></span> {rating}</p>
       <div>
-        <h5>Ingredients</h5>
+        <h5 className=' fw-bold text-uppercase'>Ingredients</h5>
 
         <ul class="list-group list-group-flush">
   <li class="list-group-item">{ingredients[0]}</li>
@@ -45,7 +45,7 @@ let show=()=>{
       </div>
 
       <div className='pt-3 '>
-        <h5 className='pb-2'>Cooking Method</h5>
+        <h5 className='pb-2  fw-bold text-uppercase'>Cooking Method</h5>
         <p className='fw-bold'> 
         {cooking_method}
       </p>

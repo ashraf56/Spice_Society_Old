@@ -3,6 +3,8 @@ import App from "../App";
 import Home from "../component/Home";
 import Blog from "../component/Blog";
 import DetailChef from "../component/DetailChef";
+import Login from "../Authentication page/Login";
+import Signup from "../Authentication page/Signup";
 
 const router = createBrowserRouter([
     {
@@ -21,7 +23,16 @@ const router = createBrowserRouter([
   path:'/chef/:id',
   element:<DetailChef></DetailChef>,
   loader: ({params})=> fetch(`https://b7a10-chef-recipe-hunter-server-side-ashraf56.vercel.app/chef/${params.id}`)
-}
+},
+{
+  path:'/login',
+  element:<Login></Login>
+},
+{
+  path:'/signup',
+  element:<Signup/>
+},
+
 
       ]
     },
