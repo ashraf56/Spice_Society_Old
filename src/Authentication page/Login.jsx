@@ -4,8 +4,10 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import { Authcontext } from './AuthCenter/AuthCenter';
+import { FaGoogle } from 'react-icons/fa';
+
 const Login = () => {
-  let {signIN}=useContext(Authcontext);
+  let {signin,google}=useContext(Authcontext);
   let[error ,Seterror]=useState('')
 
 let handlelogin = e =>{
@@ -13,9 +15,10 @@ let handlelogin = e =>{
     let form=e.target;
     let email=form.email.value;
     let password=form.password.value;
- signIN(email,password)
+    signin(email,password)
         .then((userCredential) => {
           const loguser = userCredential.user;
+          console.log(loguser);
         Seterror('');
         }
           
@@ -26,7 +29,18 @@ let handlelogin = e =>{
           Seterror(errorMessage)
         });
 
-    console.log(email);
+}
+
+let Gsingin =()=>{
+  google().then((result) => {
+    const guser = result.user;
+    Seterror('');
+    console.log(guser);
+  }).catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    Seterror(errorMessage);
+  });
 }
 
     return (
@@ -41,16 +55,20 @@ let handlelogin = e =>{
     <form onSubmit={handlelogin}  className='m-5'>
   <div className="mb-3 w-100">
     <label className="form-label">Email address</label>
-    <input type="email" className="form-control" name='email' id="exampleInputEmail1" />
+    <input type="email" required className="form-control" name='email' id="exampleInputEmail1" />
   </div>
   <div className="mb-3 w-100">
     <label className="form-label">Password</label>
-    <input type="password" className="form-control" name='password' id="exampleInputPassword1"/>
+    <input type="password" className="form-control" name='password' required  id="exampleInputPassword1"/>
   </div>
   
   <button type="submit" className="btn btn-dark w-100">Submit</button>
+
+ <button className='btn w-100' onClick={Gsingin}>Sign in with Google <span><FaGoogle/></span></button>
+ <div>
+   <Link to='/signup' className='text-decoration-none text-dark'> Register now </Link>
+ </div>
  
-  <Link to='/signup' className='text-decoration-none text-dark'> Register now </Link>
   <p className='py-2 text-danger fw-bold text-uppercase'>{error}</p>
 </form>
     </Card>
