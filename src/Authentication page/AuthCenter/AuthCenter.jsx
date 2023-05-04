@@ -18,18 +18,19 @@ let createUser=(email,password)=>{
 }
 
 let signin=(email,password)=>{
+    setLoader(true)
     return signInWithEmailAndPassword(auth, email, password);
 }
 
 let google=()=>{
-  
+  setLoader(true)
     return signInWithPopup(auth, Gprovider)
 }
 
 useEffect(()=>{
     let unsubscribe=onAuthStateChanged(auth,cuser=>{
         setUser(cuser);
-       
+       setLoader(false)
         
     })
     return()=>{
@@ -44,7 +45,7 @@ useEffect(()=>{
 
 
     let info={
-        user, 
+        user, loader,
 createUser,signin,logout,google,
     
     }

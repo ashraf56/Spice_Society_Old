@@ -2,14 +2,16 @@ import React, { useContext, useState } from 'react';
 
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Authcontext } from './AuthCenter/AuthCenter';
 import { FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
   let {signin,google}=useContext(Authcontext);
   let[error ,Seterror]=useState('')
-
+  let location=useLocation();
+  let navigate=useNavigate();
+  let from=location.state?.from?.pathname || '/';
 let handlelogin = e =>{
     e.preventDefault();
     let form=e.target;
@@ -29,6 +31,9 @@ let handlelogin = e =>{
           Seterror(errorMessage)
         });
 
+        navigate(from , {replace:true});
+
+
 }
 
 let Gsingin =()=>{
@@ -41,6 +46,8 @@ let Gsingin =()=>{
     const errorMessage = error.message;
     Seterror(errorMessage);
   });
+  navigate(from , {replace:true});
+
 }
 
     return (
