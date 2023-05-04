@@ -39,7 +39,7 @@ let signOut=()=>{
  
  
 
-  <li className="nav-item ps-3">
+  <li className="nav-item ps-1">
 {
 user ? <p className='nav-item d-flex  align-items-center'>
         
@@ -53,14 +53,13 @@ user ? <p className='nav-item d-flex  align-items-center'>
 }  
 
 
-<a className='nav-link ps-3 w-50    fw-semibold' onClick={signOut}>
+<a className='nav-link ps-3 w-50 ' onClick={signOut}>
 LOGOUT
-
 </a>
 
     
 
-</p> : <NavLink className="nav-link"  to='/login' >Login</NavLink> 
+</p> : <NavLink className="nav-link"  to='/login' >LOGIN</NavLink> 
 
 } <Tooltip 
 id='my-tooltip'

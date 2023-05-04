@@ -5,12 +5,15 @@ import Pdf from "react-to-pdf";
 const ref = React.createRef();
 
 const Blog = () => {
+  const options = {
+    orientation: 'landscape',
+};
     return (
         <div className='container ' >
-          <div ref={ref}>
+          <div className='w-100' ref={ref}>
 <h1 className='text-center pb-5'>Common questions</h1>
 
-             <Accordion className='container mb-5   pb-5'>
+             <Accordion defaultActiveKey="0" className='container mb-5   pb-5'>
       <Accordion.Item eventKey="0">
         <Accordion.Header>Tell us the differences between uncontrolled and controlled components?</Accordion.Header>
         <Accordion.Body>
@@ -58,7 +61,7 @@ Access and use the props in our component, optionally using default props for op
     </Accordion>
     </div>
 <div className='text-center'>
-<Pdf targetRef={ref} filename="code-example.pdf">
+<Pdf targetRef={ref} options={options} filename="code-example.pdf">
 {({ toPdf }) =>
 <p className=' fs-5 btn  fw-bold' onClick={toPdf}>Print as Pdf</p>}
 </Pdf>
