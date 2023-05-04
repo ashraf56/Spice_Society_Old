@@ -62,11 +62,11 @@ let Gsingin =()=>{
     <form onSubmit={handlelogin}  className='m-5'>
   <div className="mb-3 w-100">
     <label className="form-label">Email address</label>
-    <input type="email" required className="form-control" name='email' id="exampleInputEmail1" />
+    <input type="email"  placeholder='Enter your email' required className="form-control" name='email' id="exampleInputEmail1" />
   </div>
   <div className="mb-3 w-100">
     <label className="form-label">Password</label>
-    <input type="password" className="form-control" name='password' required  id="exampleInputPassword1"/>
+    <input type="password" placeholder='Enter your password'  className="form-control" name='password' required  id="exampleInputPassword1"/>
   </div>
   
   <button type="submit" className="btn btn-dark w-100">Submit</button>

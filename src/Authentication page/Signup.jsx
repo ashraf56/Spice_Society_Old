@@ -45,19 +45,19 @@ createUser(email,password)
      
      <div className="mb-3 w-100">
        <label className="form-label">Name</label>
-       <input type="text" className="form-control" name='user' id="exampleInputEmail1" />
+       <input type="text" className="form-control" name='user' placeholder='Enter your username' id="exampleInputEmail1" />
      </div> 
        <div className="mb-3 w-100">
        <label className="form-label">Email address</label>
-       <input type="email" required className="form-control" name='email' id="exampleInputEmail1" />
+       <input type="email" required className="form-control" name='email' placeholder='Enter your email' id="exampleInputEmail1" />
      </div>
      <div className="mb-3 w-100">
        <label className="form-label">Photo url</label>
-       <input type="text" className="form-control" name='photo' id="exampleInputEmail1" />
+       <input type="text" className="form-control" placeholder='Enter your photoUrl' name='photo' id="exampleInputEmail1" />
      </div>
      <div className="mb-3 w-100">
        <label className="form-label">Password</label>
-       <input type="password" required className="form-control" name='password' id="exampleInputPassword1"/>
+       <input type="password" required placeholder='Enter your password' className="form-control" name='password' id="exampleInputPassword1"/>
      </div>
      
      <button type="submit" className="btn btn-dark w-100">Submit</button>
