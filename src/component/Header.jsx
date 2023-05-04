@@ -3,8 +3,9 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { FaFire, FaUserCircle } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { Authcontext } from '../Authentication page/AuthCenter/AuthCenter';
+import  '../index.css';
 import { Tooltip } from 'react-tooltip';
 import 'react-tooltip/dist/react-tooltip.css';
 
@@ -28,16 +29,18 @@ let signOut=()=>{
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
          
-          <Nav className='ms-auto'>
+          <Nav className='ms-auto  '>
    
   <li className="nav-item">
-    <Link className="nav-link" to='/' >Home</Link>
+    <NavLink className="nav-link active-link" to='/' activeClassName="active" >Home</NavLink>
   </li>
   <li className="nav-item">
-  <Link className="nav-link" to='/blog' >blog</Link>  </li>
+  <NavLink className="nav-link " activeClassName="active" to='/blog' >blog</NavLink>  </li>
   <li className="nav-item">
+  <NavLink className="nav-link " activeClassName="active " to='/signup' >REgister</NavLink>  </li>
+  <li className="nav-item ps-3">
 {
-user ? <li className='nav-item d-flex  align-items-center'>
+user ? <p className='nav-item d-flex  align-items-center'>
         
 
   {user? 
@@ -48,13 +51,13 @@ user ? <li className='nav-item d-flex  align-items-center'>
 :<FaUserCircle/>}  
 
 
-<li className='nav-link ps-2 fw-semibold' onClick={signOut}>
+<a className='nav-link ps-2 fw-semibold' onClick={signOut}>
   Sign out
-</li>
+</a>
 
     
 
-</li> : <Link className="nav-link" to='/login' >Login</Link> 
+</p> : <Link className="nav-link"  to='/login' >Login</Link> 
 
 } <Tooltip 
 id='my-tooltip'

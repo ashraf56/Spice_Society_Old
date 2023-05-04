@@ -4,7 +4,7 @@ import { Authcontext } from './AuthCenter/AuthCenter';
 
 const Signup = () => {
 
-let {user,createUser}=useContext(Authcontext);
+let {createUser}=useContext(Authcontext);
 let[error ,Seterror]=useState('')
     let handleSignup = e =>{
         e.preventDefault();
