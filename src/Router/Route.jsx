@@ -6,11 +6,13 @@ import DetailChef from "../component/DetailChef";
 import Login from "../Authentication page/Login";
 import Signup from "../Authentication page/Signup";
 import ProtectedRoute from "./ProtectedRoute";
+import Errorpage from "../ErrorPage/Errorpage";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <App></App>,
+      errorElement:<Errorpage></Errorpage>,
       children:[
 {
     path:'/',
@@ -22,7 +24,7 @@ const router = createBrowserRouter([
 },
 {
   path:'/chef/:id',
-  element:<ProtectedRoute>
+  element:<ProtectedRoute>,
     <DetailChef></DetailChef>
   </ProtectedRoute>
   ,

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { FaFire, FaUserCircle } from "react-icons/fa";
+import {  FaArrowCircleLeft, FaCrosshairs, FaFileExport, FaFire,  FaTimesCircle,  FaTrash,  FaUserCircle } from "react-icons/fa";
 import { Link, NavLink } from 'react-router-dom';
 import { Authcontext } from '../Authentication page/AuthCenter/AuthCenter';
 import  '../index.css';
@@ -38,26 +38,30 @@ let signOut=()=>{
   <NavLink className="nav-link " activeClassName="active" to='/blog' >blog</NavLink>  </li>
   <li className="nav-item">
   <NavLink className="nav-link " activeClassName="active " to='/signup' >REgister</NavLink>  </li>
+ 
+
   <li className="nav-item ps-3">
 {
 user ? <p className='nav-item d-flex  align-items-center'>
         
 
-  {user? 
+  {user.photoURL? 
  
  <img src={user.photoURL}   data-tooltip-id="my-tooltip" 
  data-tooltip-content={user.displayName} 
- data-tooltip-place="top"  className= 'w-25 rounded-circle  img-fluid'  />
-:<FaUserCircle/>}  
+ data-tooltip-place="top"  className= 'border border-danger w-25 rounded-circle  img-fluid'  />
+:<FaUserCircle className='fs-2'/>
+}  
 
 
-<a className='nav-link ps-2 fw-semibold' onClick={signOut}>
-  Sign out
+<a className='nav-link ps-3 w-50    fw-semibold' onClick={signOut}>
+LOGOUT
+
 </a>
 
     
 
-</p> : <Link className="nav-link"  to='/login' >Login</Link> 
+</p> : <NavLink className="nav-link"  to='/login' >Login</NavLink> 
 
 } <Tooltip 
 id='my-tooltip'
