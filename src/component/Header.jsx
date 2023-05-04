@@ -32,12 +32,11 @@ let signOut=()=>{
           <Nav className='ms-auto  '>
    
   <li className="nav-item">
-    <NavLink className="nav-link active-link" to='/' activeClassName="active" >Home</NavLink>
+    <NavLink className="nav-link active-link" to='/' activeClassName="active" >HOME</NavLink>
   </li>
   <li className="nav-item">
-  <NavLink className="nav-link " activeClassName="active" to='/blog' >blog</NavLink>  </li>
-  <li className="nav-item">
-  <NavLink className="nav-link " activeClassName="active " to='/signup' >REgister</NavLink>  </li>
+  <NavLink className="nav-link " activeClassName="active" to='/blog' >BLOG</NavLink>  </li>
+ 
  
 
   <li className="nav-item ps-3">

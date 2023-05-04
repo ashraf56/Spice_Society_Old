@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Card } from 'react-bootstrap';
 import { Authcontext } from './AuthCenter/AuthCenter';
+import { Link } from 'react-router-dom';
 
 const Signup = () => {
 
@@ -61,6 +62,7 @@ createUser(email,password)
      </div>
      
      <button type="submit" className="btn btn-dark w-100">Submit</button>
+     <p className='py-3'>Already have an account? <Link to='/login' className='text-decoration-none text-danger'>Log  In now</Link></p>
      <p className='py-2 text-danger fw-bold text-uppercase'>{error}</p>
    </form>
        </Card>

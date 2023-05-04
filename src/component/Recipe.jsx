@@ -2,7 +2,7 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import imgs from '../assets/hand-drawn-tasty-tequenos-with-sauce_23-2148809453.avif'
+import LazyLoad from 'react-lazyload';
 import { FaThumbsUp } from 'react-icons/fa';
 const Recipe = ({Chef}) => {
     let {id ,likes,chef_picture,description,chef_name,years_of_experience,number_of_recipes}=Chef;
@@ -17,7 +17,8 @@ const Recipe = ({Chef}) => {
            Discover  Chef: <span className='text-danger'> {chef_name}</span>
            </h3>
             <div className='rounded-start-pill'>
- <img src={chef_picture} alt="" className=' img-fluid rounded-5 ' />
+            <LazyLoad height={200} once>
+ <img src={chef_picture} alt="" className=' img-fluid rounded-5 ' /></LazyLoad> 
             </div>
            
 
