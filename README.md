@@ -1,4 +1,4 @@
-#**Spice Society**
+# **Spice Society**
 
 Spice Society is a web application that allows users to discover  chefs from Bangladesh . 
 
