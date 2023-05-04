@@ -12,7 +12,7 @@ const DetailChef = () => {
             
 {
     Chefdetail.map(Chef=> <Recipe
-    
+    key={Chef.id}
     Chef={Chef}
     ></Recipe>)
 }
@@ -20,7 +20,7 @@ const DetailChef = () => {
 
 {
     Chefdetail.map(Chef=> <RecipeDetail
-    
+    key={Chef.id}
         Chef={Chef}
         ></RecipeDetail>)
 }

@@ -4,10 +4,10 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Authcontext } from './AuthCenter/AuthCenter';
-import { FaGoogle } from 'react-icons/fa';
+import { FaGithub, FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
-  let {signin,google}=useContext(Authcontext);
+  let {signin,google,github}=useContext(Authcontext);
   let[error ,Seterror]=useState('')
   let location=useLocation();
   let navigate=useNavigate();
@@ -50,6 +50,18 @@ let Gsingin =()=>{
 
 }
 
+let Gitsingin=()=>{
+github().then((result) => {
+  const gituser = result.user;
+  Seterror('');
+}).catch((error) => {
+  const errorCode = error.code;
+  const errorMessage = error.message;
+  Seterror(errorMessage);
+});
+navigate(from , {replace:true});
+}
+
     return (
 
  <div className='  my-5 container'>
@@ -72,6 +84,7 @@ let Gsingin =()=>{
   <button type="submit" className="btn btn-dark w-100">Submit</button>
 
  <button className='btn w-100' onClick={Gsingin}>Sign in with Google <span><FaGoogle/></span></button>
+ <button className='btn w-100' onClick={Gitsingin}>Sign in with Github <span><FaGithub/></span></button>
  <div>
    <Link to='/signup' className='text-decoration-none text-dark'> Register now </Link>
  </div>

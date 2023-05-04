@@ -15,11 +15,11 @@ const Recipe = ({Chef}) => {
         <Col sm={12} md={12} >
         <h3 className='fw-bold display-5 text-start py-4 '>
            Discover  Chef: <span className='text-danger'> {chef_name}</span>
-           </h3>
+           </h3><LazyLoad width={'100%'} height={'auto'} threshold={1.00}>
             <div className='rounded-start-pill'>
-            <LazyLoad width={'100%'} height={'auto'} threshold={0.99}>
- <img src={chef_picture} alt="" className=' img-fluid rounded-5 ' /></LazyLoad> 
-            </div>
+            
+ <img src={chef_picture} alt="" className=' img-fluid rounded-5 ' />
+            </div></LazyLoad> 
            
 
         </Col>

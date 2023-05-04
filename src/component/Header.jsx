@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import {  FaArrowCircleLeft, FaCrosshairs, FaFileExport, FaFire,  FaTimesCircle,  FaTrash,  FaUserCircle } from "react-icons/fa";
+import {  FaFire,    FaUserCircle } from "react-icons/fa";
 import { Link, NavLink } from 'react-router-dom';
 import { Authcontext } from '../Authentication page/AuthCenter/AuthCenter';
 import  '../index.css';
@@ -23,13 +23,16 @@ let signOut=()=>{
 
     return (
         <div>
+
+
+
             <Navbar collapseOnSelect expand="lg" bg="body" variant="light">
       <Container>
         <Navbar.Brand href="#home" className='fw-bold text-uppercase'> <span className='fs-3 text-danger'><FaFire /></span> Spice-Society </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
+        <Navbar.Collapse id="responsive-navbar-nav" className='justify-content-end'>
          
-          <Nav className='ms-auto  '>
+          <Nav className='ms-auto align-items-center  '>
    
   <li className="nav-item">
     <NavLink className="nav-link active-link" to='/' activeClassName="active" >HOME</NavLink>
@@ -37,38 +40,26 @@ let signOut=()=>{
   <li className="nav-item">
   <NavLink className="nav-link " activeClassName="active" to='/blog' >BLOG</NavLink>  </li>
  
- 
-
-  <li className="nav-item ps-1">
-{
-user ? <p className='nav-item d-flex  align-items-center'>
-        
-
-  {user.photoURL? 
- 
- <img src={user.photoURL}   data-tooltip-id="my-tooltip" 
- data-tooltip-content={user.displayName} 
- data-tooltip-place="top"  className= 'border border-danger w-25 rounded-circle  img-fluid'  />
-:<FaUserCircle className='fs-2'/>
-}  
-
-
-<a className='nav-link ps-3 w-50 ' onClick={signOut}>
-LOGOUT
-</a>
-
-    
-
-</p> : <NavLink className="nav-link"  to='/login' >LOGIN</NavLink> 
-
-} <Tooltip 
-id='my-tooltip'
-/>
- 
-  
-   </li>
-          
           </Nav>
+
+          <Nav className='justify-content-end'>
+
+          <li className="nav-item">
+  <div className="nav-link"  >
+    {user?<>
+     { user.photoURL ?
+      <img src={user.photoURL} data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName} style={{width:'50px' ,borderRadius:'50px'}} />:
+      <FaUserCircle className='fs-2'/>
+     }<Tooltip id="my-tooltip" />
+     <span className='btn'  onClick={signOut}>Logout</span>
+      </> : 
+     <NavLink to='/login' activeClassName="active" className='nav-link text-decoration-none text-uppercase text-dark'>LOgin</NavLink>
+  }
+    </div>  </li>
+
+
+          </Nav>
+
         </Navbar.Collapse>
       </Container>
     </Navbar>

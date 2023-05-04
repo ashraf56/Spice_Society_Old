@@ -35,12 +35,12 @@ let show=()=>{
       <div>
         <h5 className=' fw-bold text-uppercase'>Ingredients</h5>
 
-        <ul class="list-group list-group-flush">
-  <li class="list-group-item">{ingredients[0]}</li>
-  <li class="list-group-item">{ingredients[1]}</li>
-  <li class="list-group-item">{ingredients[2]}</li>
-  <li class="list-group-item">{ingredients[3]}</li>
-  <li class="list-group-item">{ingredients[4]} </li>
+        <ul className="list-group list-group-flush">
+  <li className="list-group-item">{ingredients[0]}</li>
+  <li className="list-group-item">{ingredients[1]}</li>
+  <li className="list-group-item">{ingredients[2]}</li>
+  <li className="list-group-item">{ingredients[3]}</li>
+  <li className="list-group-item">{ingredients[4]} </li>
 </ul>
       </div>
 
