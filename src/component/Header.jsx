@@ -30,7 +30,7 @@ let signOut=()=>{
       <Container>
         <Navbar.Brand href="#home" className='fw-bold text-uppercase'> <span className='fs-3 text-danger'><FaFire /></span> Spice-Society </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav" className='justify-content-end'>
+        <Navbar.Collapse id="responsive-navbar-nav" >
          
           <Nav className='ms-auto align-items-center  '>
    
@@ -40,11 +40,7 @@ let signOut=()=>{
   <li className="nav-item">
   <NavLink className="nav-link " activeClassName="active" to='/blog' >BLOG</NavLink>  </li>
  
-          </Nav>
-
-          <Nav className='justify-content-end'>
-
-          <li className="nav-item">
+  <li className="nav-item">
   <div className="nav-link"  >
     {user?<>
      { user.photoURL ?
@@ -59,6 +55,8 @@ let signOut=()=>{
 
 
           </Nav>
+
+        
 
         </Navbar.Collapse>
       </Container>
