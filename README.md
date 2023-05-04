@@ -1,4 +1,4 @@
- **Spice Society**
+ <font size='+2'>**Spice Society**</font>
 
 Spice Society is a web application that allows users to discover  chefs from Bangladesh . 
 
