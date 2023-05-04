@@ -5,6 +5,9 @@ import Navbar from 'react-bootstrap/Navbar';
 import { FaFire, FaUserCircle } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { Authcontext } from '../Authentication page/AuthCenter/AuthCenter';
+import { Tooltip } from 'react-tooltip';
+import 'react-tooltip/dist/react-tooltip.css';
+
 const Header = () => {
   let {user,logout}=useContext(Authcontext);
 
@@ -34,22 +37,28 @@ let signOut=()=>{
   <Link className="nav-link" to='/blog' >blog</Link>  </li>
   <li className="nav-item">
 {
-user ? <>
+user ? <li className='nav-item d-flex  align-items-center'>
         
-<button className='font-bold btn rounded-5 w-50'
 
->
   {user? 
-<img src={user.photoURL} data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title={user?.displayName }  className= ' w-50 rounded-circle  img-fluid  '  />
+ 
+ <img src={user.photoURL}   data-tooltip-id="my-tooltip" 
+ data-tooltip-content={user.displayName} 
+ data-tooltip-place="top"  className= 'w-25 rounded-circle  img-fluid'  />
 :<FaUserCircle/>}  
 
-</button> 
-<span className=' w-25' onClick={signOut}>sign out</span>
+
+<li className='nav-link ps-2 fw-semibold' onClick={signOut}>
+  Sign out
+</li>
+
     
 
-</> : <Link className="nav-link" to='/login' >Login</Link> 
+</li> : <Link className="nav-link" to='/login' >Login</Link> 
 
-}
+} <Tooltip 
+id='my-tooltip'
+/>
  
   
    </li>
