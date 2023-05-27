@@ -1,8 +1,9 @@
 # **Spice Society**
 
-Spice Society is a web application that allows users to discover  chefs from Bangladesh . 
+Spice Society is a web application that allows users to discover  chefs from Bangladesh. 
+Spice Society: Empowered users to explore and connect with top-notch Bangladeshi chefs, revolutionizing the culinary experience.
 
-With Spice Society, you can browse a vast collection of chefs-recipes, ingredients, save your favorite recipes ,
+With Spice Society, you can browse a vast collection of chefs-recipes, ingredients, save your favorite recipes.
 
 # **Features**
 
