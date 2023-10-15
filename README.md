@@ -19,7 +19,7 @@ Spice Society is built with the following technologies:
  - React bootstarp
  - Firebase 
  - React awsome components
-
+- Vite
 
 # **Demo**
 
